@@ -95,3 +95,39 @@ function scrollActive() {
   });
 }
 window.addEventListener("scroll", scrollActive);
+
+// LIGHT DARK THEME
+const themeButton = document.getElementById("theme-button");
+const lightTheme = "light-theme";
+const iconTheme = "bx-sun";
+
+// prev topic if user selected
+const selectedTheme = localStorage.getItem("selected-theme");
+const selectedIcon = localStorage.getItem("selected-icon");
+
+//validating light-theme class
+const getCurrentTheme = () =>
+  document.body.contains(lightTheme) ? "dark" : "light";
+const getCurrentIcon = () =>
+  themeButton.classList.contains(iconTheme) ? "bx bx-moon" : "bx bx-sun";
+
+//validate prev choice
+if (selectedTheme) {
+  //validation is fullfiled
+  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
+    lightTheme
+  );
+  themeButton.classList[selectedIcon === "bx bx-moon" ? "add" : "remove"](
+    iconTheme
+  );
+}
+
+//activate/deactivate theme manually with the button
+themeButton.addEventListener("click", () => {
+  //add or remove the light / icon theme
+  document.body.classList.toggle(lightTheme);
+  themeButton.classList.toggle(iconTheme);
+  // save the theme and the current icon that user chose
+  localStorage.setItem("selected-theme", getCurrentTheme());
+  localStorage.setItem("selected-icon", getCurrentIcon());
+});
