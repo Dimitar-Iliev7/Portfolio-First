@@ -254,9 +254,9 @@ img {
   font-size: var(--biggest-font-size);
 }
 
-/* .home__img {
+.home__img {
   width: 16px;
-} */
+}
 
 .home__handle {
   justify-self: center;
