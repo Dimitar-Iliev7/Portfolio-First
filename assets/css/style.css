@@ -134,6 +134,15 @@ body.light-theme {
       the website, in light theme
   ==========*/
 .light-theme .scroll-header {
+  box-shadow: 0 2px 4px hsla(0, 0%, 1%, 0.1);
+}
+
+.light-theme .nav__menu {
+  background-color: hsla(var(--second-hue), 32%, 90%, 0.8);
+}
+
+.light-theme .section__subtitle {
+  color: var(--text-color);
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
